@@ -23,11 +23,15 @@ class AccMetrics(Enum):
     MASTER_ROUTE_QPS_METRIC = "py_rtp_master_route_qps"
     DOMAIN_ROUTE_QPS_METRIC = "py_rtp_domain_route_qps"
     MASTER_ROUTE_ERROR_QPS_METRIC = "py_rtp_master_route_error_qps"
-    
+
     # igraph
     IGRAPH_QPS_METRIC = "py_rtp_igraph_qps"
     IGRAPH_ERROR_QPS_METRIC = "py_rtp_igraph_error_qps"
     IGRAPH_EMPTY_QPS_METRIC = "py_rtp_igraph_empty_qps"
+
+    # prompt generator
+    PG_QPS_METRIC = "pg_qps"
+    PG_ERROR_QPS_METRIC = "pg_error_qps"
 
 
 class GaugeMetrics(Enum):
@@ -60,6 +64,10 @@ class GaugeMetrics(Enum):
 
     # vit preprocess
     VIT_PREPROCESS_RT_METRIC = "py_rtp_vit_preprocess_rt"
+
+    # prompt generator
+    PG_TOTAL_RT_METRIC = "pg_total_rt"
+    PG_GEN_PROMPT_RT_METRIC = "pg_gen_prompt_rt"
 
 
 class MetricReporter(object):
