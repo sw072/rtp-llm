@@ -156,7 +156,8 @@ public:
         } else {
             std::stringstream ss;
             ss << "Generated invalid status, status[" << status_ << "], input_id[" << input << "]";
-            throw std::runtime_error(ss.str());
+            RTP_LLM_LOG_WARNING(ss.str());
+            // throw std::runtime_error(ss.str());
         }
         return status_;
     }
