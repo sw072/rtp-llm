@@ -154,9 +154,9 @@ public:
             input_list_.push_back(input);
             status_ = new_status;
         } else {
-            std::stringstream ss;
-            ss << "Generated invalid status, status[" << status_ << "], input_id[" << input << "]";
-            RTP_LLM_LOG_WARNING(ss.str());
+            // std::stringstream ss;
+            // ss << "Generated invalid status, status[" << status_ << "], input_id[" << input << "]";
+            // RTP_LLM_LOG_WARNING(ss.str());
             // throw std::runtime_error(ss.str());
         }
         return status_;
