@@ -36,8 +36,6 @@ anet::IPacketHandler::HPRetCode HttpServerAdapter::handlePacket(anet::Connection
         return anet::IPacketHandler::FREE_CHANNEL;
     }
 
-    std::cout << "handlePacket:realThreadNum:" << _threadPool->getThreadNum() << std::endl;
-
     if (packet->isRegularPacket()) {  // handle httpPacket
         return handleRegularPacket(connection, packet);
     } else {  // control command received
