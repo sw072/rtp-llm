@@ -1,7 +1,5 @@
 #include "http_server/HttpServerAdapter.h"
 
-#include <iostream>
-
 #include "autil/LockFreeThreadPool.h"
 #include "http_server/HttpRequestWorkItem.h"
 #include "http_server/HttpResponse.h"
@@ -15,7 +13,6 @@ HttpServerAdapter::HttpServerAdapter(const std::shared_ptr<HttpRouter>& router, 
     _router(router) {
     _threadPool = std::make_shared<autil::LockFreeThreadPool>(threadNum, queueSize, nullptr, "HttpRequestThreadPool");
     _threadPool->start();
-    std::cout << "HttpRequestThreadPool started. threadNum:" << threadNum << std::endl;
 }
 
 HttpServerAdapter::~HttpServerAdapter() {
