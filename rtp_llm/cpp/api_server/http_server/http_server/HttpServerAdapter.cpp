@@ -15,7 +15,8 @@ HttpServerAdapter::HttpServerAdapter(const std::shared_ptr<HttpRouter>& router, 
     _router(router) {
     _threadPool = std::make_shared<autil::LockFreeThreadPool>(threadNum, queueSize, nullptr, "HttpRequestThreadPool");
     _threadPool->start();
-    std::cout << "HttpRequestThreadPool started. threadNum:" << threadNum << std::endl;
+    std::cout << "HttpRequestThreadPool started. threadNum:" << threadNum
+              << ", realThreadNum:" << _threadPool->getThreadNum() << std::endl;
 }
 
 HttpServerAdapter::~HttpServerAdapter() {
